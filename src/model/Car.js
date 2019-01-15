@@ -1,8 +1,14 @@
+let instance = null;
 export class Car {
     constructor(doors, engine, color) {
-        this.doors = doors
-        this.engine = engine
-        this.color = color
+        if (!instance) {
+            this.doors = doors
+            this.engine = engine
+            this.color = color
+            instance = this;
+        } else {
+            return instance
+        }
     }
 
     getColor() {
