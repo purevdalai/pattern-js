@@ -4,21 +4,25 @@
 </template>
 
 <script>
-import { Car, Suv } from './model/Car.js'
+import { Car, CarFactory } from './model/Car.js'
 
 export default {
     name: 'app',
 
     data: function() {
         return {
-            civic: new Car(4, 'V6', 'Black'),
-            cx5: new Suv(4, 'V8', 'Grey'),
+            factory: null,
+            civic: null,
+            honda: null,
         }
     },
 
     created: function() {
+        this.factory = new CarFactory()
+        this.civic = this.factory.createCar('civic')
+        this.honda = this.factory.createCar('honda')
         console.log(this.civic)
-        console.log(this.cx5)
+        console.log(this.honda)
     },
 }
 </script>

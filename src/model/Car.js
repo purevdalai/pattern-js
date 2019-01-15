@@ -1,14 +1,8 @@
-let instance = null;
 export class Car {
     constructor(doors, engine, color) {
-        if (!instance) {
             this.doors = doors
             this.engine = engine
             this.color = color
-            instance = this;
-        } else {
-            return instance
-        }
     }
 
     getColor() {
@@ -36,13 +30,13 @@ export class Car {
     }
 }
 
-export class Suv extends Car {
-    constructor(doors, engine, color) {
-        super(doors, engine, color)
-        this.wheels = 4;
-    }
-
-    getWheels() {
-        return this.wheels
+export class CarFactory {
+    createCar(type) {
+        switch(type) {
+            case 'civic':
+                return new Car(4, 'V6', 'Grey')
+            case 'honda':
+                return new Car(2, 'V4', 'Yellow')
+        }
     }
 }
