@@ -4,29 +4,21 @@
 </template>
 
 <script>
-import { Car } from './model/Car.js'
+import { Car, Suv } from './model/Car.js'
 
 export default {
     name: 'app',
 
     data: function() {
         return {
-            car: new Car(4, 'V6', 'Black'),
+            civic: new Car(4, 'V6', 'Black'),
+            cx5: new Suv(4, 'V8', 'Grey'),
         }
     },
 
     created: function() {
-        console.log(this.car)
+        console.log(this.civic)
+        console.log(this.cx5)
     },
-
-    methods: {
-        calc() {
-            return 4 * 2
-        },
-
-        printCalc(callback) {
-            console.log(callback())
-        }
-    }
 }
 </script>

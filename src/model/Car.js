@@ -29,3 +29,14 @@ export class Car {
         this.doors = doors
     }
 }
+
+export class Suv extends Car {
+    constructor(doors, engine, color) {
+        super(doors, engine, color)
+        this.wheels = 4;
+    }
+
+    getWheels() {
+        return this.wheels
+    }
+}
