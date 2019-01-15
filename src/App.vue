@@ -4,14 +4,19 @@
 </template>
 
 <script>
+import { Car } from './model/Car.js'
 
 export default {
     name: 'app',
 
+    data: function() {
+        return {
+            car: new Car(4, 'V6', 'Black'),
+        }
+    },
+
     created: function() {
-        // console.log('Hello World!')
-        this.printCalc(this.calc)
-        // console.log('numb => ', numb)
+        console.log(this.car)
     },
 
     methods: {
